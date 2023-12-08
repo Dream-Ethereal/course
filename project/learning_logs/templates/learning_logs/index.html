@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+</head>
+<body>
+    {% extends 'learning_logs/base.html' %}
+    {% block page_header %}
+        <div class="p-3 mb-4 bg-light border rounded-3">
+            <div class="container-fluid py4">
+                <h1 class="display-3">Track your learning.</h1>
+                <p class="lead">
+                    Make you own Learning Log, and keep a list of the topics you're learning about.
+                </p>
+                <a class="btn btn-primary btn-lg mt-1" href="{% url 'accounts:register' %}">Register &raquo;</a>
+            </div>
+        </div>
+    {% endblock page_header %}
+</body>
+</html>
