@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit_BlogArticles</title>
+</head>
+<body>
+    {% extends 'Blog/base.html' %}
+    {% block content %}
+        <p><a class="btn btn-lg mt-1" href="{% url 'Blog:blog' blog.id %}">{{blog}}</a></p>
+        <p>Edit:</p>
+        <form action="{% url 'Blog:edit_blogarticle' blogarticle.id %}" method="post">
+            {% csrf_token %}
+            {{form.as_div}}
+            <button class="btn btn-primary btn-lg mt-1" name="submit">Save changes</button>
+        </form>
+    {% endblock content %}
+</body>
+</html>

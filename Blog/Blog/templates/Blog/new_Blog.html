@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new_Blog</title>
+</head>
+<body>
+    {% extends 'Blog/base.html' %}
+    {% block content %}
+        <p>Add a new Blog topic:</p>
+        <form action="{% url 'Blog:new_blog' %}" method="post">
+            {% csrf_token %}
+            {{form.as_div}}
+            <button class="btn btn-primary btn-lg mt-1" name="submit">Add topic</button>
+        </form>
+    {% endblock content %}
+</body>
+</html>
